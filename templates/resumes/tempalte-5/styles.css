@@ -1,0 +1,155 @@
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.hero {
+  background-image: url(Free-3D-Illustration.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.193);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.about {
+  text-align: center;
+  padding: 4rem 0;
+  background-color: burlywood;
+}
+
+.about img {
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+.experience,
+.education {
+  padding: 4rem 0;
+  background-color: #a2fff3;
+}
+
+.experience h2,
+.education h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+.job-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.job,
+.school {
+  background-color: rgb(204, 205, 248);
+  box-shadow: 0px 3px 6px rgba(60, 122, 255, 0.44);
+  padding: 1.5rem;
+  margin: auto;
+  border-radius: 5px;
+  width: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.job:hover,
+.school:hover {
+  transform: translateY(-5px);
+}
+
+.job h3,
+.school h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.job p,
+.school p {
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+.contact {
+  background-color: #f4f4f4;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

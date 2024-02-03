@@ -1,0 +1,70 @@
+{% load static %} {% include "admin-includes/header.html" %} {% block content %}
+<!-- Container Fluid-->
+
+<style>
+    .card span{
+        font-size:15px;
+    }
+
+   
+    .card .box-part {
+        background: #074046;
+        border-radius: 15px;
+        padding: 10px 5px;
+        margin: 15px 0px;
+        border: 1px solid #4245ff;
+        color: white;
+    }
+ 
+
+</style>
+<div class="container-fluid" id="container-wrapper">
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="card h-100">
+                <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between">
+                    <h4 class="m-0 font-weight-bold text-primary">All Subscriptions</h4>
+                    <a class="m-0 float-right btn btn-info btn-sm" href="#">Add New <i
+                            class="fas fa-plus mx-2"></i></a>
+                </div>
+                <div class="row">
+                    {% for subscription in subscriptions %}
+                        <div class="col-lg-4   col-md-4 col-sm-4 col-xs-12">
+                            <div class="box-part p-3">
+                                <p class="d-flex border-bottom border-success justify-content-between"> 
+                                    <span>
+                                    <span class="text-info">Date</span> : {{ subscription.created_on }}</span>
+                                    <span class="float-right"><span class="text-info">Id : </span> {{subscription.id}}</span>
+                                </p>
+                                <h4 class="text-center cat-title">{{subscription.title|title}}</h4>
+                                <p class="text-center text-light">
+                                    <small class="mb-1 p-0">
+                                        {{ subscription.description|safe|truncatechars:9  }}
+                                    </small>
+                                </p>
+                                <p class="text-center mb-2 pb-0 d-flex justify-content-between">
+                                    <span class="fs-12 mb-0 float-left"><span class="text-info">Amount :</span> 
+                                    {{ subscription.amount }}</span>
+                                    <span class="float-right"><span class="text-info ">Months</span> :
+                                        <span>{{subscription.months}}</span></span>
+                                </p>
+                                <p class="d-flex mt-0 pt-0  justify-content-between">
+                                    <a href="" title="View Records"
+                                        class="float-left"><i class="fas fa-eye mt-0 pt-0 text-info"></i></a>
+                                    <a href=""
+                                        title="Download category Records" class="float-left"><i
+                                            class="fas fa-feather  mt-0 pt-0 text-info"></i></a>
+                                    <a href="" title="Delete Category if empty"
+                                        class="float-right"><i class="fas fa-pen mt-0 pt-0 text-info float-right"></i></a>
+                                </p>
+                            </div>
+                        </div>	 
+                    {% endfor %}
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Container Fluid-->
+{% endblock %} {% include "admin-includes/footer.html" %}

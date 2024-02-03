@@ -1,0 +1,161 @@
+{% load static %} {% include "admin-includes/header.html" %} {% block content %}
+<!-- Container Fluid-->
+
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="card h-100">
+                <div class="card-header py-2 d-flex flex-row align-items-center justify-content-between">
+                    <h4 class="m-0 font-weight-bold text-primary">All Users</h4>
+                    <div class="col-lg-6 py-0 my-0">
+
+                        <form class="navbar-search" method="get" action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-1 small"
+                                placeholder="What do you want to look for?" name="q" value = "{{ query|default:'' }}" aria-label="Search"
+                                aria-describedby="basic-addon2" style="border-color: #3f51b5" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit" >
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- <a class="m-0 float-right btn btn-info btn-sm" href="#">Download Report <i
+                            class="fas fa-file-csv mx-2"></i></a> -->
+                </div>
+                <div class="table-responsive table-striped">
+                    <table class="table align-items-center table-flush">
+                        <thead class="">
+                            <tr>
+                                <th>User ID</th>
+                                <th>F Name</th>
+                                <th>L Name</th>
+                                <th>Email</th>
+                                <th>Profiles</th>
+                                <th>Type</th>
+                                <th>Joined</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}
+                            <tr>
+                                <td  class="text-center text-primary">#{{user.id}}</td>
+                                <td>{{user.first_name|default:"--"}} </td>
+                                <td>{{ user.last_name|default:"--" }}</td>
+                                <td>{{user.email}}</td>
+                                <td class="text-success text-center">{{user.cv_profiles.all|length}}</td>
+                                <td class="text-center">
+                                    {% if user.has_subscription %}
+                                    <span class="badge badge-success">Subscribed</span>
+                                    {% else %}
+                                    <span class="badge badge-warning">No Subscription</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{user.created_at}}</td>
+                                <td>
+                                    <a href="#" class="btn btn-sm badge pill my-0 py-1 btn-info">Detail</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer border-top pagination_footer d-flex">
+                    <div class=" col" id="" role="status" aria-live="polite">
+                        Page {{ users.number }} of {{ users.paginator.num_pages }} 
+                    </div>
+                    <div class=" paging_simple_numbers col"
+                        id="">
+                        <ul class="pagination">
+                            {% if users.has_previous %}
+                            <li class="paginate_button page-item">
+                                <a href="?page=1{% if query %}&q={{query}}{% endif %}"
+                                    class="page-link">
+                                    First
+                                </a>
+                            </li>
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ users.previous_page_number }}{% if query %}&q={{query}}{% endif %}"
+                                        class="page-link">
+                                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li class="paginate_button page-item previous disabled">
+                                    <span class="page-link">
+                                        <i class="fas fa-chevron-left"
+                                            aria-hidden="true"></i>
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                                {% if users.number|add:'-9' > 1 %}
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ users.number|add:'-9' }}{% if query %}&q={{query}}{% endif %}"
+                                        class="page-link">&hellip;
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                                {% for i in users.paginator.page_range %}
+                                {% if users.number == i %}
+                                <li class="active paginate_button page-item">
+                                    <span class="page-link">{{ i }} </span>
+                                </li>
+                                {% elif i > users.number|add:'-8' and i < users.number|add:'8' %} 
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ i }}{% if query %}&q={{query}}{% endif %}" class="page-link">
+                                        {{ i }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+
+                                {% if users.paginator.num_pages > users.number|add:'9' %}
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ users.number|add:'9' }}{% if query %}&q={{query}}{% endif %}"
+                                        class="page-link">&hellip;
+                                    </a>
+                                </li>
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ last_page }}{% if query %}&q={{query}}{% endif %}" class="page-link">
+                                        Last
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                                {% if users.has_next %}
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ users.next_page_number }}{% if query %}&q={{query}}{% endif %}"
+                                        class="page-link">
+                                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="paginate_button page-item">
+                                    <a href="?page={{ users.paginator.num_pages }}{% if query %}&q={{query}}{% endif %}"
+                                        class="page-link">
+                                        last
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li class="paginate_button page-item previous disabled">
+                                    <span class="page-link">
+                                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                                    </span>
+                                </li>
+                                {% endif %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---Container Fluid-->
+{% endblock %} {% include "admin-includes/footer.html" %}

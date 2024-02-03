@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}" />
+    <title>JotCVer.in - Build Your Perfect Resume</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img
+            src="{% static 'admin-assets/images/mediamodifier_cropped_image.png' %}"
+            alt
+            height="80px"
+            width="120px"
+          />
+        </div>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li>
+            <a target="_blank" href="https://jotcv.com/templates"
+              >Templates</a
+            >
+          </li>
+          <li>
+            <a target="_blank" href="http://blog.jotcv.com/">Blogs</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://jotcv.com/contacts"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2 style="color: black">Build Your Perfect Resume</h2>
+      <p style="margin-top: 20px; margin-bottom: 30px">
+        Create a professional and impressive resume with our easy-to-use online
+        resume builder.
+      </p>
+      <a target="_blank" href="http://jotcv.com/" class="cta-button"
+        >Get Started</a
+      >
+    </section>
+    <section class="app-advertisement">
+      <div class="app-text">
+        <h2>Introducing Our Mobile App!</h2>
+        <p>
+          Download our app and create or edit your resume on the go. Access your
+          resume anytime, anywhere!
+        </p>
+        <a href="#" class="download-button">Download Now</a>
+      </div>
+      <div class="app-image">
+        <img
+          src="{% static 'unnamed.webp' %}"
+          height="350px"
+          alt="App Screenshot"
+        />
+      </div>
+    </section>
+    <section class="features">
+      <div class="feature">
+        <h3>Easy to Use</h3>
+        <p>Create your resume in minutes with our user-friendly interface.</p>
+      </div>
+      <div class="feature">
+        <h3>Custom Templates</h3>
+        <p>
+          Choose from a variety of templates to match your style and profession.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Downloadable</h3>
+        <p>
+          Download your resume in different formats (PDF, Word) for easy
+          sharing.
+        </p>
+      </div>
+    </section>
+
+    <footer style="text-align: center">
+      <p>&copy; 2023 JotCVer.in. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+}
+header div {
+  font-size: 18px;
+}
+.contact {
+  margin-left: 10rem;
+  text-align: right;
+  padding: 2px 6px;
+  margin-top: 4px;
+  color: #ffff;
+  border-radius: 0.625rem;
+  background: linear-gradient(180deg, #9917ff 0%, rgba(46, 41, 255, 0.33) 100%);
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  color: #ffff;
+  font-weight: 500;
+}
+nav div {
+  margin: 0 40px;
+}
+
+.home {
+  background: #ff8585;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  margin-top: 4.3rem;
+  margin-bottom: 0;
+
+  color: #ffff;
+  font-size: 66px;
+}
+
+.home-section img {
+  width: 100%;
+}
+
+.About {
+  background: #ff8585;
+
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.About h1 {
+  margin: 0%;
+  font-size: 4rem;
+  color: #ffff;
+  text-align: justify;
+  margin-left: 18rem;
+  color: #9917ff;
+}
+.subtext {
+  width: 65rem;
+  margin-left: 18rem;
+  text-align: justify;
+  font-size: 1.2rem;
+  color: hsl(280, 40%, 27%);
+}
+.about-img {
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: auto;
+}
+.Exp-img {
+  width: 14%;
+  margin-left: 40%;
+}
+.Experience,
+.Education {
+  background: #ff8585;
+}
+.Education {
+  padding-bottom: 3rem;
+}
+.experience-details,
+.Edu-details {
+  padding: 3.2rem;
+  border-radius: 6px;
+  background-color: #9917ff;
+  width: fit-content;
+  margin: 0.8rem;
+}
+.Experience h2,
+.Education h2 {
+  text-align: center;
+  font-size: 4rem;
+  padding-top: 2rem;
+  margin: 0%;
+  color: #9917ff;
+}
+.work-experience,
+.Edu {
+  display: flex;
+  color: #ffff;
+  font-size: 1.5rem;
+  justify-content: space-evenly;
+}
+.experience-date,
+.edu-date {
+  padding-top: 1rem;
+}
+
+.contact-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #9917ff;
+}
+.contact-section h2 {
+  text-align: center;
+  font-size: 4rem;
+  padding-top: 2rem;
+  margin: 0%;
+  color: #ffffff;
+}
+.social img {
+  margin: 4rem;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+.section {
+    border: 1px solid #edecec;
+    display: table;
+    margin: auto;
+    max-width: 1200px;
+}
+.resume-document h1 {
+    font-size: 36px;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    padding: 9px;
+    font-family: sans-serif;
+}
+.resume-document p {
+    color: #3b3f44;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+span.head-text h4 {
+    font-family: sans-serif;
+    font-size: 17px;
+    color: white;
+    padding: 10px;
+    display: table;
+    margin: auto;
+    background-color: #2222f9;
+    text-align: center;
+}
+.resume-document h5 {
+    line-height: 1.5;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: center;
+    color: #1f2d3d;
+}
+.resume-build {
+    text-align: center;
+    padding: 18px;
+    background-color: #eff2f7;
+}
+.resume-build h2{
+font-family: sans-serif;
+    color: #3b3f44;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: 500;
+}
+.resume-build h3 {
+    margin-top: -15px;
+    font-weight: 500;
+    font-family: arial,helvetica,sans-serif;
+    color: #505152;
+    font-size: 17px;
+}
+.resume-build h4 {
+    font-weight: 500;
+    font-size: 14px;
+    font-family: sans-serif;
+    word-break: break-word;
+    color: #505152;
+    line-height: 1.5;
+    text-align: center;
+    font-family: sans-serif;
+}
+    </style>
+</head>
+<body>
+   <div class="section">
+    <div class="resume-document">
+        <h1>We saved your Resume🤩</h1>
+<p>Hello {{ user.username }}<br><br>
+Thanks for using the Resume Build. Your document has been saved in your account.<br><br>
+To access your resume, please use the link below.</p>
+<span class="head-text">  <h4>View your document</h4></span>
+
+<h5>If there is anything we can help you with, please drop our customer<br>
+    service a line at <a>help@JotCV.com.</a></h5>
+
+
+    <div class="resume-build">
+        <h2>Resume Build</h2>
+        <h3> Navi Mumbai, 799046</h3>   
+<h4>This email was sent to <a>{{ user.email }}</a><br>
+
+    You've received it because you've subscribed to our newsletter.</h4>
+    </div>
+    </div>
+
+   </div> 
+</body>
+</html>

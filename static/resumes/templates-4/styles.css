@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.main-header h3 {
+  margin-left: 5px;
+  color: rgb(2, 209, 209);
+}
+.main-header h3:hover {
+  color: aqua;
+}
+.navbar {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  background-color: #0b1d37;
+  text-align: center; /* Center the text */
+}
+.links {
+  display: flex;
+  align-items: center;
+}
+.links a {
+  color: white;
+  padding: 8px 3px;
+  margin: 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: ease-in-out 120ms;
+}
+.links a:hover {
+  background-color: aqua;
+  color: #0b1d37;
+}
+.navbar a.show {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Menu Button Styles */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  text-align: right;
+  padding: 20px;
+  color: white;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero {
+  background-image: url("hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #0b1d37;
+  color: #ecf4ff;
+  text-align: center;
+  position: relative;
+  padding: 100px 0;
+  height: 10rem;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 100px 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.848249504880077) 47%,
+    rgba(11, 29, 55, 1) 100%
+  );
+  backdrop-filter: blur(7px);
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  position: relative;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  z-index: 100;
+  width: fit-content;
+
+  margin: auto;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 100;
+}
+.about {
+  background-color: #0b1d37;
+
+  display: flex;
+  justify-content: space-evenly;
+  padding: 100px 0;
+  transition: all 40ms;
+}
+.content {
+  width: 40rem;
+}
+.about img {
+  width: 25rem;
+}
+.about h2 {
+  font-size: 2.5rem;
+  color: #c4ddff;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  text-align: justify;
+  color: #c4ddff;
+  margin-bottom: 40px;
+}
+.experience {
+  background-color: #0b1d37;
+  text-align: center;
+
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 100;
+  padding: 100px 0;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c4ddff;
+  position: relative;
+  z-index: 100;
+}
+.job-section {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.experience .job {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ecf4ff;
+  border: 2px solid #0b1d37;
+  border-radius: 9px;
+
+  padding: 2rem;
+  width: 16rem;
+  padding: auto;
+  height: 12rem;
+  margin: 2rem 10rem;
+  background-color: rgba(22, 58, 108, 0.384);
+}
+
+.experience .job h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ecf4ff;
+}
+
+.experience .job p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.education {
+  background-color: #0b1d37;
+  text-align: center;
+  padding: 100px 0;
+}
+.edu-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c4ddff;
+}
+
+.education .degree {
+  margin-bottom: 40px;
+  color: #ecf4ff;
+}
+
+.education .degree h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  padding: 0.4rem;
+  border-radius: 9px;
+  background-color: rgba(0, 187, 255, 0.323);
+}
+
+.education .degree p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.contact {
+  background-color: #0b1d37;
+  color: #ecf4ff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #c4ddff;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    position: relative;
+    display: block; /* Add positioning for proper placement */
+  }
+
+  .navbar .menu-item {
+    text-align: center; /* Center the text for mobile view */
+  }
+
+  .navbar a {
+    display: none;
+    padding: 14px 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar.responsive {
+    position: relative;
+  }
+  .links {
+    display: block;
+  }
+  .education .degree h3 {
+    font-size: 1rem;
+  }
+  .navbar.responsive .menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .about img {
+    width: 12rem;
+  }
+  .about h2 {
+    font-size: 1.5rem;
+  }
+  .about p {
+    font-size: 0.6rem;
+  }
+}

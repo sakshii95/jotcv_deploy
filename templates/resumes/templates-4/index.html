@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Responsive Navbar with Toggle Function</title>
+  </head>
+  <body>
+    <div class="navbar" id="navbar">
+      <div class="main-header">
+        <h3>Nikhil Nair</h3>
+        <div class="menu-icon" onclick="toggleMenu()">
+          &#9776;
+          <!-- Hamburger icon -->
+        </div>
+      </div>
+      <div class="links">
+        <a href="#home" class="menu-item">Home</a>
+        <a href="#about" class="menu-item">About</a>
+        <a href="#services" class="menu-item">Services</a>
+        <a href="#contact" class="menu-item">Contact</a>
+      </div>
+    </div>
+    <div class="hero">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Showcasing my work and skills</p>
+    </div>
+    <div class="about">
+      <div class="content">
+        <h2>About Me</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          aliquam erat vel libero pharetra, eu varius turpis posuere. Ut a erat
+          eu orci eleifend tristique at nec lorem. Sed at libero ut odio
+          facilisis tincidunt eu vel quam.
+        </p>
+      </div>
+      <img src="about-bg.png" alt="" />
+    </div>
+    <div class="experience">
+      <h2>Experience</h2>
+      <div class="job-section">
+        <div class="job">
+          <h3>Frontend Developer</h3>
+          <p>ABC Company</p>
+          <p>June 2019 - Present</p>
+        </div>
+        <div class="job">
+          <h3>UI/UX Designer</h3>
+          <p>XYZ Agency</p>
+          <p>January 2017 - May 2019</p>
+        </div>
+      </div>
+    </div>
+    <div class="education">
+      <h2>Education</h2>
+      <div class="edu-section">
+        <div class="degree">
+          <h3>Master's in Computer Science</h3>
+          <p>University of Technology</p>
+          <p>Graduated in 2021</p>
+        </div>
+        <div class="degree">
+          <h3>Bachelor's in Web Development</h3>
+          <p>Web University</p>
+          <p>Graduated in 2019</p>
+        </div>
+      </div>
+    </div>
+    <div class="contact">
+      <h2>Contact Me</h2>
+      <p>
+        If you'd like to get in touch, feel free to reach out to me at
+        email@example.com or through my phone no :98822112221111.
+      </p>
+    </div>
+    <script>
+      function toggleMenu() {
+        var navbarLinks = document.querySelectorAll(".navbar .menu-item");
+
+        for (var i = 0; i < navbarLinks.length; i++) {
+          navbarLinks[i].classList.toggle("show");
+        }
+      }
+    </script>
+  </body>
+</html>
